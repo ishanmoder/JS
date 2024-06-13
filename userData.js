@@ -22,7 +22,8 @@ class UserDataPage {
         const isPhoneValid = CommonFunctions.validatePhone(phoneInput);
         const isPasswordValid = CommonFunctions.validatePassword(passwordInput);
 
-        const isValid = isNameValid && isEmailValid && isPhoneValid && isPasswordValid;
+        const isValid = isNameValid && isEmailValid && isPhoneValid && isPasswordValid;  
+        /////WHY ARE YOU VALIDATING HERE????
 
         return { userData, isValid };
     }
@@ -98,8 +99,9 @@ class UserDataPage {
                 return;
             }
 
+            //////// WHY TOO MANY IF ELSE AND WHICH IS YOUR PRIMARY KEY HERE - USERNAME, EMAIL OR PHONE NUMBER???????
+            
             const originalUser = storedData[index];
-
             if (
                 (editedUser.username !== originalUser.username || editedUser.phone !== originalUser.phone) &&
                 editedUser.password !== originalUser.password
@@ -181,6 +183,6 @@ class UserDataPage {
 }
 
 // Ensure the stored data is displayed when the page is loaded
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => { //// WHY THIS METHOD???
     UserDataPage.displayStoredData();
 });
